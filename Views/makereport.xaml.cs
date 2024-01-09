@@ -10,14 +10,24 @@ public partial class makereport : ContentPage
 		BindingContext = new makereportViewModel(Navigation);
 	}
 
-	private void OnCapturePhotoClicked(object sender, EventArgs e)
+	private async void OnUploadFromGalleryClicked(object sender, EventArgs e)
 	{
+		try
+		{
+			FileResult file = await MediaPicker.PickPhotoAsync();
+			string filePath = null;
 
-	}
+			if (file != null)
+			{
+				filePath = file.FullPath;
+			}
 
-	private void OnUploadFromGalleryClicked(object sender, EventArgs e)
-	{
-
+			((makereportViewModel)BindingContext).MediaPath = filePath;
+		}
+		catch(Exception ex)
+		{
+			await DisplayAlert("Error", ex.Message, "OK");
+		}
 	}
 
 	private async void viewreport(object sender, EventArgs e)

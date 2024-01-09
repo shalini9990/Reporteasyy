@@ -34,6 +34,8 @@ namespace Reporteasyy.ViewModels
         public async Task GetAllReport()
         {
             List<Makereport> reportsList = await new FirebaseHelper().GetAllReportByDBUserID(Preferences.Get("RTDBUserID", "NoRTDBUserID"));
+            reportsList.Sort((x, y) => x.ReportTime.CompareTo(y.ReportTime));
+
             ObservableCollection<Makereport> reportsOC = new ObservableCollection<Makereport>();
             foreach(Makereport r in reportsList)
             {

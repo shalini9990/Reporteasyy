@@ -10,6 +10,6 @@ namespace Reporteasyy.Models
     {
         public const string FirebaseRealTimeURL = "https://reporteasyy-default-rtdb.asia-southeast1.firebasedatabase.app/";
         public const string FirebaseAuth = "AIzaSyATl3LvAGM4ipkg15697SkOyXeqfqXyuys";
-        public const string FirebaseStorage = "gs://reporteasyy.appspot.com";
+        public const string FirebaseStorage = "reporteasyy.appspot.com";
     }
 }

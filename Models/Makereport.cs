@@ -17,6 +17,8 @@ namespace Reporteasyy.Models
         public string UnitNumber { get; set; }
         public string StreetName { get; set; }
         public string PostalCode { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
         public string Urgency { get; set; }
         public string Media { get; set; }   
     }

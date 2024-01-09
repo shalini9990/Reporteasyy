@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Reporteasyy.Models;
 using Firebase.Database.Query;
 using Reporteasyy.Services;
+using Firebase.Storage;
 
 namespace Reporteasyy.Services
 {
@@ -89,7 +90,7 @@ namespace Reporteasyy.Services
         }
 
         public async Task<string> AddReport(string dbUserID, string title, string description, string categories, DateTime reportTime, string unitNumber,
-            string streetName, string postalCode, string urgency, string media)
+            string streetName, string postalCode, string latitude, string longitude, string urgency, string media)
         {
             return await AddReport(new Makereport
             {
@@ -101,6 +102,8 @@ namespace Reporteasyy.Services
                 UnitNumber = unitNumber,
                 StreetName = streetName,
                 PostalCode = postalCode,
+                Latitude = latitude,
+                Longitude = longitude,
                 Urgency = urgency,
                 Media = media
             });
@@ -126,6 +129,8 @@ namespace Reporteasyy.Services
                 UnitNumber = report.Object.UnitNumber,
                 StreetName = report.Object.StreetName,
                 PostalCode = report.Object.PostalCode,
+                Latitude = report.Object.Latitude,
+                Longitude = report.Object.Longitude,
                 Urgency = report.Object.Urgency,
                 Media = report.Object.Media
             };
@@ -150,9 +155,32 @@ namespace Reporteasyy.Services
                 UnitNumber = report.Object.UnitNumber,
                 StreetName = report.Object.StreetName,
                 PostalCode = report.Object.PostalCode,
+                Latitude = report.Object.Latitude,
+                Longitude = report.Object.Longitude,
                 Urgency = report.Object.Urgency,
                 Media = report.Object.Media
             }).ToList();
+        }
+
+        // For storage:
+        public FirebaseStorage FirebaseStorage = new FirebaseStorage(Settings.FirebaseStorage);
+
+        // Add files to firebase storage:
+        public async Task<string> UploadFileToFirebaseStorage(string mediaPath)
+        {
+            FileStream stream = File.OpenRead(mediaPath);
+
+            string fileName = Path.GetFileName(mediaPath);
+            fileName = $"{DateTime.Now.ToString("yyyyMMdd_HHmmssfff")}_{fileName}";
+
+            string url = await FirebaseStorage
+                .Child("REFiles")
+                .Child(fileName)
+                .PutAsync(stream);
+
+            stream.Dispose();
+
+            return url;
         }
     }
 }

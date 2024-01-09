@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Reporteasyy.Views.viewreport"
              Title="viewreport">
-    <VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
         <CollectionView ItemsSource="{Binding Reports}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame Padding="10,10" Margin="10,10">
-                    <Grid>
+                        <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -30,15 +31,16 @@
                             <Label Text="{Binding StreetName }" FontSize="20" FontAttributes="Bold" FontFamily="Lobster" TextColor="Black" Grid.Row="5"/>
                             <Label Text="{Binding PostalCode }" FontSize="20" FontAttributes="Bold" FontFamily="Lobster" TextColor="Black" Grid.Row="6"/>
                             <Label Text="{Binding Urgency }" FontSize="20" FontAttributes="Bold" FontFamily="Lobster" TextColor="Black" Grid.Row="7" />
-                            <Label Text="{Binding Media }" FontSize="20" FontAttributes="Bold" FontFamily="Lobster" TextColor="Black" Grid.Row="8"/>
-                           
+                            <Image Source="{Binding Media}" Aspect="AspectFill" Grid.Row="8"/>
+
                         </Grid>
                     </Frame>
-                  
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
 
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

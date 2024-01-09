@@ -30,7 +30,7 @@
 
             <!-- Category -->
             <Label Text="Select Category" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-            <Picker Title="Choose a category" TextColor="Black" BackgroundColor="White" Margin="0,0,0,20" SelectedIndex="{Binding SelectedCategoryIndex}" SelectedItem="{Binding SelectedCategory}">
+            <Picker Title="Choose a category" TextColor="Black" BackgroundColor="White" Margin="0,0,0,20" SelectedItem="{Binding SelectedCategory}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Accident</x:String>
@@ -43,12 +43,6 @@
 
             </Picker>
 
-            <!-- Date and Time Selection -->
-            <Label Text="Select Date and Time" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-            <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
-                <DatePicker x:Name="datePicker" Format="D" BackgroundColor="#F8F8F8" TextColor="Black"/>
-                <TimePicker x:Name="timePicker" Format="T" BackgroundColor="#F8F8F8" TextColor="Black" Margin="10,0,0,0"/>
-            </StackLayout>
 
 
 
@@ -57,11 +51,11 @@
 
                 <!-- Unit/Number -->
                 <Label Text="Unit/Number" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-                <Entry Placeholder="Enter unit/number" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
+                <Entry Text="{Binding Unitnumber}" Placeholder="Enter unit/number" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
 
                 <!-- Street Name (Assuming this app is only for Sibu, Sarawak) -->
                 <Label Text="Select Street Name" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-                <Picker Title="Choose a street name" TextColor="Black" BackgroundColor="White" Margin="0,0,0,20">
+                <Picker Title="Choose a street name" TextColor="Black" BackgroundColor="White" Margin="0,0,0,20" SelectedItem="{Binding Streetname}">
 
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -81,22 +75,22 @@
                 </Picker>
                 <!-- Postal Code -->
                 <Label Text="Postal Code" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-                <Entry Placeholder="Enter postal code" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
+                <Entry Text="{Binding Postalcode}" Placeholder="Enter postal code" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
 
                 <Label Text="OR" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black" Margin="0,0,0,20"/>
 
                 <Label Text="To be more precise, or you're at the location of incident, key in your latitude and longitude number" FontFamily="Montserrat-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
                 <Label Text="You can obtain these values from mapping apps, GPS devices, or online services." FontFamily="Montserrat" FontSize="16" TextColor="Black"/>
                 <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
-                    <Entry Placeholder="Latitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="Black" WidthRequest="150"/>
-                    <Entry Placeholder="Longitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="Black" WidthRequest="150" Margin="10,0,0,0"/>
+                    <Entry Text="{Binding Latitude}" Placeholder="Latitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="Black" WidthRequest="150"/>
+                    <Entry Text="{Binding Longitude}" Placeholder="Longitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="Black" WidthRequest="150" Margin="10,0,0,0"/>
                 </StackLayout>
 
             </StackLayout>
 
             <!-- Urgency -->
             <Label Text="Select Urgency Level" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-            <Picker Title="Choose urgency level" TextColor="Black" BackgroundColor="White" Margin="0,0,0,20">
+            <Picker Title="Choose urgency level" TextColor="Black" BackgroundColor="White" Margin="0,0,0,20" SelectedItem="{Binding Urgency}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>High</x:String>
@@ -108,7 +102,6 @@
 
             <!-- Media -->
             <Label Text="Attach Media (optional)" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-            <Button Text="Capture Photo" Clicked="OnCapturePhotoClicked" BackgroundColor="white" TextColor="Black" Margin="0,0,0,20"/>
             <Button Text="Upload from Gallery" Clicked="OnUploadFromGalleryClicked" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
             <Button Text="Past Reports" Clicked="viewreport" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
 
