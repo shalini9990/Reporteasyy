@@ -110,7 +110,7 @@
                 <Entry Text="{Binding Unitnumber}" Placeholder="Enter unit/number" BackgroundColor="#FFFFFF" TextColor="#333333"/>
 
                 <Label Text="Select Street Name" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
-                <Picker Title="Choose a street name" TextColor="#333333" BackgroundColor="#FFFFFF">
+                <Picker Title="Choose a street name" TextColor="#333333" BackgroundColor="#FFFFFF" SelectedItem="{Binding StreetName}" SelectedIndex="0">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Jalan Wong King Huo</x:String>
@@ -144,7 +144,7 @@
             </StackLayout>
 
             <Label Text="Select Urgency Level" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
-            <Picker Title="Choose urgency level" TextColor="#333333" BackgroundColor="#FFFFFF">
+            <Picker Title="Choose urgency level" TextColor="#333333" BackgroundColor="#FFFFFF" SelectedItem="{Binding Urgency}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>High</x:String>

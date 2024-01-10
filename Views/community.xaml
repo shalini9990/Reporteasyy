@@ -37,11 +37,6 @@
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-
-            <!-- Repeat the above DataTemplate for more community members -->
-
-            <!-- Second hardcoded community member -->
-           
         </CollectionView>
     </Grid>
 </ContentPage>
