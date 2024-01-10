@@ -92,6 +92,7 @@
                                 <Label Text="{Binding Categories}" FontSize="16" FontFamily="Lobster" TextColor="#666666" Grid.Row="2"/>
                                 <Label Text="{Binding ReportTime}" FontSize="16" FontFamily="Lobster" TextColor="#666666" Grid.Row="3"/>
                                 <Label Text="{Binding UnitNumber, StringFormat='Unit Number: {0}'}" FontSize="18" FontAttributes="Bold" FontFamily="Lobster" TextColor="#333333" Grid.Row="4"/>
+                                <!--<Label Text="{Binding StreetName, StringFormat='Street Name: {0}'}" FontSize="18" FontAttributes="Bold" FontFamily="Lobster" TextColor="#333333" Grid.Row="5"/>-->
                                 <Label Text="{Binding StreetName, StringFormat='Street Name: {0}'}" FontSize="18" FontAttributes="Bold" FontFamily="Lobster" TextColor="#333333" Grid.Row="5"/>
                                 <Label Text="{Binding PostalCode, StringFormat='Postal Code: {0}'}" FontSize="18" FontAttributes="Bold" FontFamily="Lobster" TextColor="#333333" Grid.Row="6"/>
                                 <Label Text="{Binding Latitude, StringFormat='Latitude: {0}'}" FontSize="18" FontAttributes="Bold" FontFamily="Lobster" TextColor="#333333" Grid.Row="7"/>

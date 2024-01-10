@@ -51,6 +51,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\community.jpg" />
 	  <None Remove="Resources\Images\homepage.jpeg" />
+	  <None Remove="Resources\Images\newhome.jpg" />
 	  <None Remove="Resources\Images\reporteasylogo.png" />
 	  <None Remove="Resources\Images\safety.jpg" />
 	</ItemGroup>

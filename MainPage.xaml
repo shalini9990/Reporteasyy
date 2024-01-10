@@ -4,7 +4,7 @@
              x:Class="Reporteasyy.MainPage">
 
  <Grid>
-    <Image Source="homepage.jpeg" Aspect="AspectFill" />
+    <Image Source="newhome.jpg" Aspect="AspectFill" />
         <ScrollView>
         <VerticalStackLayout
             Spacing="25"
