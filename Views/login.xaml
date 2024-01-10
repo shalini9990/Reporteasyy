@@ -14,8 +14,8 @@
 
 
 
-        <Entry x:Name="Username" FontFamily="Roboto" Placeholder="Username" />
-        <Entry x:Name="Password" FontFamily="Roboto" Placeholder="Password" />
+        <Entry x:Name="Username" FontFamily="Roboto" Placeholder="Email" />
+        <Entry x:Name="Password" FontFamily="Roboto" Placeholder="Password" IsPassword="True"  />
 
 
 

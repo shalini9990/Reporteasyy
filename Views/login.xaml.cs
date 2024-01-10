@@ -33,7 +33,8 @@ public partial class login : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error!", ex.Message, "OK");
+            //await DisplayAlert("Error!", ex.Message, "OK");
+            await DisplayAlert("Incorrect Credentials!", ex.Message, "OK");
         }
     }
 }
