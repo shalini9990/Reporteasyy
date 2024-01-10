@@ -2,35 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Reporteasyy.Views.makereport"
-             Title="makereport">
-    <!--<VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>-->
-
-    <!--<VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>-->
-    <ScrollView>
+             Title="Make a Report">
+   
+    <!--<ScrollView>
         <StackLayout Padding="20">
 
-            <!--Title-->
-            <Label Text="Incident Title" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+            --><!-- Title --><!--
+            <Label Text="Incident Title" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
             <Editor Text="{Binding Title}" Placeholder="Enter title" BackgroundColor="#F8F8F8" HeightRequest="100" Margin="0,0,0,20"/>
 
-            <!-- Description -->
-            <Label Text="Incident Description" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+            --><!-- Description --><!--
+            <Label Text="Incident Description" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
             <Editor Text="{Binding Description}" Placeholder="Enter details about the incident" BackgroundColor="#F8F8F8" HeightRequest="100" Margin="0,0,0,20"/>
 
-
-            <!-- Category -->
-            <Label Text="Select Category" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-            <Picker Title="Choose a category" TextColor="Black" BackgroundColor="White" Margin="0,0,0,20" SelectedItem="{Binding SelectedCategory}">
+            --><!-- Category --><!--
+            <Label Text="Select Category" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+            <Picker Title="Choose a category" TextColor="#333333" BackgroundColor="#FFFFFF" Margin="0,0,0,20" SelectedItem="{Binding SelectedCategory}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Accident</x:String>
@@ -40,23 +27,90 @@
                         <x:String>Other</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
-
             </Picker>
 
-
-
-
-            <!-- Location -->
+            --><!-- Location --><!--
             <StackLayout Padding="20">
 
-                <!-- Unit/Number -->
-                <Label Text="Unit/Number" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-                <Entry Text="{Binding Unitnumber}" Placeholder="Enter unit/number" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
+                --><!-- Unit/Number --><!--
+                <Label Text="Unit/Number" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+                <Entry Text="{Binding Unitnumber}" Placeholder="Enter unit/number" BackgroundColor="#FFFFFF" TextColor="#333333" Margin="0,0,0,20"/>
 
-                <!-- Street Name (Assuming this app is only for Sibu, Sarawak) -->
-                <Label Text="Select Street Name" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-                <Picker Title="Choose a street name" TextColor="Black" BackgroundColor="White" Margin="0,0,0,20" SelectedItem="{Binding Streetname}">
+                --><!-- Street Name --><!--
+                <Label Text="Select Street Name" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+                <Picker Title="Choose a street name" TextColor="#333333" BackgroundColor="#FFFFFF" Margin="0,0,0,20" SelectedItem="{Binding Streetname}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Jalan Wong King Huo</x:String>
+                            --><!-- Add more street names as needed --><!--
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
 
+                --><!-- Postal Code --><!--
+                <Label Text="Postal Code" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+                <Entry Text="{Binding Postalcode}" Placeholder="Enter postal code" BackgroundColor="#FFFFFF" TextColor="#333333" Margin="0,0,0,20"/>
+
+                <Label Text="OR" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333" Margin="0,0,0,20"/>
+
+                <Label Text="To be more precise, or you're at the location of the incident, key in your latitude and longitude number" FontFamily="Montserrat-Bold" FontAttributes="Bold" FontSize="18" TextColor="#333333"/>
+                <Label Text="You can obtain these values from mapping apps, GPS devices, or online services." FontFamily="Montserrat" FontSize="16" TextColor="#666666"/>
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+                    <Entry Text="{Binding Latitude}" Placeholder="Latitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="#333333" WidthRequest="150"/>
+                    <Entry Text="{Binding Longitude}" Placeholder="Longitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="#333333" WidthRequest="150" Margin="10,0,0,0"/>
+                </StackLayout>
+            </StackLayout>
+
+            --><!-- Urgency --><!--
+            <Label Text="Select Urgency Level" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+            <Picker Title="Choose urgency level" TextColor="#333333" BackgroundColor="#FFFFFF" Margin="0,0,0,20" SelectedItem="{Binding Urgency}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>High</x:String>
+                        <x:String>Medium</x:String>
+                        <x:String>Low</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            --><!-- Media --><!--
+            <Label Text="Attach Media (optional)" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+            <Button Text="Upload from Gallery" Clicked="OnUploadFromGalleryClicked" BackgroundColor="#FFFFFF" TextColor="#333333" Margin="0,0,0,20"/>
+            <Button Text="Past Reports" Clicked="viewreport" BackgroundColor="#FFFFFF" TextColor="#333333" Margin="0,0,0,20"/>
+
+            --><!-- Submit Button --><!--
+            <Button Text="Submit Report" Command="{Binding OnSubmitBtnOnClick}" FontFamily="Roboto-Bold" BackgroundColor="#FFD700" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        </StackLayout>
+    </ScrollView>-->
+    <ScrollView BackgroundColor="#EDEDED">
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="Incident Title" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+            <Editor Text="{Binding Title}" Placeholder="Enter title" BackgroundColor="#F8F8F8" HeightRequest="100" />
+
+            <Label Text="Incident Description" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+            <Editor Text="{Binding Description}" Placeholder="Enter details about the incident" BackgroundColor="#F8F8F8" HeightRequest="100" />
+
+            <Label Text="Select Category" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+            <Picker Title="Choose a category" TextColor="#333333" BackgroundColor="#FFFFFF">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Accident</x:String>
+                        <x:String>Crime</x:String>
+                        <x:String>Environmental</x:String>
+                        <x:String>Infrastructure</x:String>
+                        <x:String>Other</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <StackLayout Padding="20" BackgroundColor="#FFFFFF" Spacing="15">
+
+                <Label Text="Unit/Number" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+                <Entry Text="{Binding Unitnumber}" Placeholder="Enter unit/number" BackgroundColor="#FFFFFF" TextColor="#333333"/>
+
+                <Label Text="Select Street Name" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+                <Picker Title="Choose a street name" TextColor="#333333" BackgroundColor="#FFFFFF">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Jalan Wong King Huo</x:String>
@@ -70,27 +124,27 @@
                             <x:String>Jalan Awang Ramli Amit</x:String>
                             <x:String>Jalan Deshon</x:String>
                             <x:String>Jalan Sungai Merah</x:String>
+                           
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <!-- Postal Code -->
-                <Label Text="Postal Code" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-                <Entry Text="{Binding Postalcode}" Placeholder="Enter postal code" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
 
-                <Label Text="OR" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black" Margin="0,0,0,20"/>
+                <Label Text="Postal Code" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+                <Entry Text="{Binding Postalcode}" Placeholder="Enter postal code" BackgroundColor="#FFFFFF" TextColor="#333333"/>
 
-                <Label Text="To be more precise, or you're at the location of incident, key in your latitude and longitude number" FontFamily="Montserrat-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-                <Label Text="You can obtain these values from mapping apps, GPS devices, or online services." FontFamily="Montserrat" FontSize="16" TextColor="Black"/>
-                <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
-                    <Entry Text="{Binding Latitude}" Placeholder="Latitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="Black" WidthRequest="150"/>
-                    <Entry Text="{Binding Longitude}" Placeholder="Longitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="Black" WidthRequest="150" Margin="10,0,0,0"/>
+                <Label Text="OR" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+
+                <Label Text="To be more precise, or you're at the location of the incident, key in your latitude and longitude number" FontFamily="Montserrat-Bold" FontAttributes="Bold" FontSize="18" TextColor="#333333"/>
+                <Label Text="You can obtain these values from mapping apps, GPS devices, or online services." FontFamily="Montserrat" FontSize="16" TextColor="#666666"/>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Entry Text="{Binding Latitude}" Placeholder="Latitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="#333333"/>
+                    <Entry Text="{Binding Longitude}" Placeholder="Longitude" Keyboard="Numeric" BackgroundColor="#F8F8F8" TextColor="#333333"/>
                 </StackLayout>
 
             </StackLayout>
 
-            <!-- Urgency -->
-            <Label Text="Select Urgency Level" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-            <Picker Title="Choose urgency level" TextColor="Black" BackgroundColor="White" Margin="0,0,0,20" SelectedItem="{Binding Urgency}">
+            <Label Text="Select Urgency Level" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+            <Picker Title="Choose urgency level" TextColor="#333333" BackgroundColor="#FFFFFF">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>High</x:String>
@@ -100,17 +154,13 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <!-- Media -->
-            <Label Text="Attach Media (optional)" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-            <Button Text="Upload from Gallery" Clicked="OnUploadFromGalleryClicked" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
-            <Button Text="Past Reports" Clicked="viewreport" BackgroundColor="White" TextColor="Black" Margin="0,0,0,20"/>
+            <Label Text="Attach Media (optional)" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+            <Button Text="Upload from Gallery" Clicked="OnUploadFromGalleryClicked" BackgroundColor="#FFFFFF" TextColor="#333333"/>
+            <Button Text="Past Reports" Clicked="viewreport" BackgroundColor="#FFFFFF" TextColor="#333333"/>
 
-
-            <!-- Submit Button -->
-            <Button Text="Submit Report" Command="{Binding OnSubmitBtnOnClick}" FontFamily="Roboto-Bold" BackgroundColor="#FFD700" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
-
+            <Button Text="Submit Report" Command="{Binding OnSubmitBtnOnClick}" FontFamily="Roboto-Bold" BackgroundColor="#FFD700" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
 
         </StackLayout>
-
     </ScrollView>
+
 </ContentPage>

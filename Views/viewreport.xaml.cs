@@ -11,4 +11,14 @@ public partial class viewreport : ContentPage
 		InitializeComponent();
 		BindingContext = new viewrreportViewModel();
 	}
+
+    private async void ConnectWithCommunityClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new community());
+    }
+
+    private async void SafetyResourcesTipClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new resources());
+    }
 }

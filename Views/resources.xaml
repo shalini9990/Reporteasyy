@@ -2,11 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Reporteasyy.Views.resources"
-             Title="resources">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Safety Resources Tips">
+  
+
+    <Grid>
+        <Image Source="safety.jpg" Aspect="AspectFill" />
+    </Grid>
 </ContentPage>

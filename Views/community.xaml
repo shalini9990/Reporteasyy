@@ -2,11 +2,46 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Reporteasyy.Views.community"
-             Title="community">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Your Community">
+
+
+    <Grid>
+        <Image Source="community.jpg" Aspect="AspectFill" />
+
+        <CollectionView BackgroundColor="Transparent">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="15" Margin="20, 0, 20, 20" BackgroundColor="#EDEDED" CornerRadius="15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Circular Image -->
+                            <Frame Grid.Row="0" CornerRadius="100" Padding="0" HasShadow="False" BackgroundColor="Transparent">
+                                <Image Source="member1.jpg" HeightRequest="100" WidthRequest="100" Aspect="AspectFill" />
+                            </Frame>
+
+                            <!-- Username -->
+                            <Label Grid.Row="1" Text="User1" FontSize="20" FontAttributes="Bold" TextColor="#333333" />
+
+                            <!-- Description -->
+                            <Label Grid.Row="2" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." FontSize="16" TextColor="#666666" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <!-- Repeat the above DataTemplate for more community members -->
+
+            <!-- Second hardcoded community member -->
+           
+        </CollectionView>
+    </Grid>
 </ContentPage>
