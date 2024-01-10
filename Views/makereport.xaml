@@ -92,7 +92,7 @@
             <Editor Text="{Binding Description}" Placeholder="Enter details about the incident" BackgroundColor="#F8F8F8" HeightRequest="100" />
 
             <Label Text="Select Category" FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
-            <Picker Title="Choose a category" TextColor="#333333" BackgroundColor="#FFFFFF">
+            <Picker Title="Choose a category" TextColor="#333333" BackgroundColor="#FFFFFF" SelectedItem="{Binding SelectedCategory, Mode=TwoWay}" SelectedIndex="0">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Accident</x:String>
